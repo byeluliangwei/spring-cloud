@@ -24,4 +24,4 @@ spring:
     config:
       server:
         git:
-          uri: file:D:\workspace-1874\spring-cloud\config-repository\spring-cloud-user
+          uri: https://github.com/byeluliangwei/spring-cloud/tree/master/config-repository
