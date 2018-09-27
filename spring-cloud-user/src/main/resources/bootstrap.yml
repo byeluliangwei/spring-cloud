@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-cloud-user
+  cloud:
+    config:
+      uri: http://localhost:9520/
+      profile: dev
+      label: master
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: spring-cloud-config-server
+
+# 安全认证服务配置
+security:
+  user:
+    name: user
+    password: password
+
+# eureka客户端信息配置
+eureka:
+#   instance:
+#     hostname: mss-user.ns.me
+#     instance-id: ${random.uuid}(${spring.application.name}::${eureka.instance.hostname}:${server.port})
+   client:
+     registry-fetch-interval-seconds: 5
+     service-url: 
+       defaultZone: http://user:password@mss-eureka01.ns.me:5683/eureka/
+
