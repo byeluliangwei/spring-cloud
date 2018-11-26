@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-cloud-eureka-2.x
+
+server:
+  port: 5683
+  
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:5683/eureka/
+      
+---
+spring:
+  profiles: single
+

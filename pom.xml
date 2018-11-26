@@ -29,9 +29,33 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- spring boot应用程序打包插件 -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot-dependencies.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 	<modules>
 		<module>spring-cloud-config</module>
 		<module>spring-cloud-user</module>
+		<module>spring-admin-client</module>
+		<module>spring-cloud-eureka</module>
+
+		
+		<module>spring-cloud-hystrix-dashboard</module>
 	</modules>
 </project>

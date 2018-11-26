@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+     spring-admin-client: 
+       image: "registry.cn-hangzhou.aliyuncs.com/luliangwei/demo:spring-admin-client-1.0.0-SNAPSHOT"
+       volumes: 
+         - "c:/Windows/System32/drivers/etc/hosts:/etc/hosts"
+       build: 
+        context: .
+        dockerfile: ./src/main/docker/Dockerfile
+       ports: 
+         - "1025:1025"
+         - "41025:41025"
+       restart: always
+       stdin_open: true
+       network_mode: "host"
